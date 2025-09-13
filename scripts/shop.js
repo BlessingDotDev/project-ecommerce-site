@@ -1,3 +1,4 @@
+import { setupHeaderEvents } from './header.js';
 import {products} from '../data/products.js';
 
 renderProductList();
@@ -49,3 +50,7 @@ function renderProductList() {
   document.querySelector('.js-grid-layout')
     .innerHTML = productListHTML;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupHeaderEvents();
+})
