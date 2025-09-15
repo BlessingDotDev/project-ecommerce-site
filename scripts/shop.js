@@ -86,13 +86,13 @@ function renderProductList() {
 
   function renderAddedMessage(productId) {
     document.querySelector(`.js-added-message-${productId}`)
-      .classList.add('show-message')
+      .classList.add('show-message');
 
     clearInterval(timeoutId);
-    
+
     timeoutId = setTimeout(() => {
        document.querySelector(`.js-added-message-${productId}`)
-      .classList.remove('show-message')
+      .classList.remove('show-message');
     }, 1000)
   }
 

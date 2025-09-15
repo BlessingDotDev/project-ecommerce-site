@@ -1,6 +1,6 @@
 import { products } from "./products.js";
 
-const cart = [];
+const cart = JSON.parse(localStorage.getItem('cartItem')) || [];
 
 export function addToCart(productId, selectValue) {
   let matching;
@@ -19,6 +19,8 @@ export function addToCart(productId, selectValue) {
       quantity: selectValue
     });
   }
+
+  SaveToStorage();
 }
 
 export function updateCartQuanity() {
@@ -29,4 +31,8 @@ export function updateCartQuanity() {
   })
 
   return cartQuantity;
+}
+
+function SaveToStorage() {
+  localStorage.setItem('cartItem', JSON.stringify(cart))
 }
