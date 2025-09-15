@@ -1,6 +1,6 @@
 import { setupHeaderEvents } from './header.js';
 import {products} from '../data/products.js';
-import {addToCart} from '../data/cart.js';
+import {addToCart, updateCartQuanity} from '../data/cart.js';
 
 renderProductList();
 
@@ -59,8 +59,16 @@ function renderProductList() {
       button.addEventListener('click', () => {
         const {productId} = button.dataset;
         addToCart(productId);
+        const cartQuantity = updateCartQuanity();
+        renderCartQuantity(cartQuantity);
       })
     })
+
+  function renderCartQuantity(cartQuantity) {
+    document.querySelector('.js-cart-item')
+      .innerHTML = cartQuantity;
+  }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
