@@ -1,5 +1,6 @@
 import { setupHeaderEvents } from './header.js';
 import {products} from '../data/products.js';
+import {addToCart} from '../data/cart.js';
 
 renderProductList();
 
@@ -41,7 +42,9 @@ function renderProductList() {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-          <button class="add-to-cart-button">Add to cart</button>
+          <button class="add-to-cart-button js-add-to-cart-button" data-product-id="${product.id}">
+           Add to cart
+          </button>
         </div>
       </div>
     `;
@@ -49,6 +52,15 @@ function renderProductList() {
   
   document.querySelector('.js-grid-layout')
     .innerHTML = productListHTML;
+
+
+  document.querySelectorAll('.js-add-to-cart-button')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        const {productId} = button.dataset;
+        addToCart(productId);
+      })
+    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
