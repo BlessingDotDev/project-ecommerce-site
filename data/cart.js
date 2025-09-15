@@ -2,7 +2,7 @@ import { products } from "./products.js";
 
 const cart = [];
 
-export function addToCart(productId) {
+export function addToCart(productId, selectValue) {
   let matching;
 
   cart.forEach(cartItem => {
@@ -12,11 +12,11 @@ export function addToCart(productId) {
   });
 
   if (matching) {
-    matching.quantity ++;
+    matching.quantity += selectValue;
   } else {
     cart.push({
       productId,
-      quantity: 1
+      quantity: selectValue
     });
   }
 }

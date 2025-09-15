@@ -30,7 +30,7 @@ function renderProductList() {
           <p class="product-price">
             R${(product.priceCents / 100).toFixed(2)}
           </p>
-          <select name="number" id="number">
+          <select name="number" id="number" class="js-select-value-${product.id}">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -57,10 +57,16 @@ function renderProductList() {
   document.querySelectorAll('.js-add-to-cart-button')
     .forEach((button) => {
       button.addEventListener('click', () => {
+
         const {productId} = button.dataset;
-        addToCart(productId);
+        const selectElement = document.querySelector(`.js-select-value-${productId}`);
+        const selectValue = Number(selectElement.value);
+
+        addToCart(productId, selectValue);
         const cartQuantity = updateCartQuanity();
         renderCartQuantity(cartQuantity);
+
+        selectElement.value = '1';
       })
     })
 
