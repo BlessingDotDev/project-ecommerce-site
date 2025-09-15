@@ -30,6 +30,8 @@ function renderProductList() {
           <p class="product-price">
             R${(product.priceCents / 100).toFixed(2)}
           </p>
+
+          <div class="added-row">
           <select name="number" id="number" class="js-select-value-${product.id}">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -42,6 +44,10 @@ function renderProductList() {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
+
+          <span class="added-message js-added-message-${product.id}">Added</span>
+          </div>
+
           <button class="add-to-cart-button js-add-to-cart-button" data-product-id="${product.id}">
            Add to cart
           </button>
@@ -65,7 +71,8 @@ function renderProductList() {
         addToCart(productId, selectValue);
         const cartQuantity = updateCartQuanity();
         renderCartQuantity(cartQuantity);
-
+        
+        renderAddedMessage(productId);
         selectElement.value = '1';
       })
     })
@@ -73,6 +80,20 @@ function renderProductList() {
   function renderCartQuantity(cartQuantity) {
     document.querySelector('.js-cart-item')
       .innerHTML = cartQuantity;
+  }
+
+  let timeoutId;
+
+  function renderAddedMessage(productId) {
+    document.querySelector(`.js-added-message-${productId}`)
+      .classList.add('show-message')
+
+    clearInterval(timeoutId);
+    
+    timeoutId = setTimeout(() => {
+       document.querySelector(`.js-added-message-${productId}`)
+      .classList.remove('show-message')
+    }, 1000)
   }
 
 }
