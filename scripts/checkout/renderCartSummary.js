@@ -1,4 +1,4 @@
-import {cart} from '../../data/cart.js';
+import {cart, removeFromCart} from '../../data/cart.js';
 import { products } from '../../data/products.js';
 
 export function renderCartSummary() {
@@ -92,6 +92,8 @@ export function renderCartSummary() {
       link.addEventListener('click', () => {
         document.querySelector(`.js-cart-summary-section-${productId}`)
           .remove();
+        removeFromCart(productId)
+        
       })
     })
 }
