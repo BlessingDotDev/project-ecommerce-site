@@ -1,17 +1,13 @@
 import {cart, removeFromCart} from '../../data/cart.js';
-import { products } from '../../data/products.js';
+import { products, deliveryOptions } from '../../data/products.js';
+import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 export function renderCartSummary() {
   let cartSummaryHTML = '';
 
   cart.forEach(cartItem => {
-    let matchingItem;
-
-    products.forEach(product => {
-      if (product.id === cartItem.productId) {
-        matchingItem = product;
-      }
-    });
+    const matchingItem = getMatchingItem(cartItem);
+    
 
     cartSummaryHTML += `
       <div class="cart-summary-section js-cart-summary-section-${cartItem.productId}">
@@ -43,57 +39,74 @@ export function renderCartSummary() {
           <div class="delivery-option-title">
             Choose a delivery option:
           </div>
-          <div class="delivery-option">
-            <input class="radio" type="radio" class="delivery-option-input" name="delivery-option-${cartItem.productId}">
-            <div>
-              <div class="delivery-option-date">
-                Tuesday, June 21
-              </div>
-              <div class="delivery-option-price">
-                FREE Shipping
-              </div>
-            </div>
-          </div>
-          <div class="delivery-option">
-            <input type="radio" class="delivery-option-input" name="delivery-option-${cartItem.productId}">
-            <div>
-              <div class="delivery-option-date">
-                Wednesday, June 21
-              </div>
-              <div class="delivery-option-price">
-                $4.99 - Shipping
-              </div>
-            </div>
-          </div>
-          <div class="delivery-option">
-            <input type="radio" class="delivery-option-input" name="delivery-option-${cartItem.productId}">
-            <div>
-              <div class="delivery-option-date">
-                Monday, June 21
-              </div>
-              <div class="delivery-option-price">
-                $9.99 - Shipping
-              </div>
-            </div>
-          </div>
+          ${renderDeliveryOptions(cartItem.productId, cartItem.deliveryId)}
         </div>
       </div>
     </div>
     `;
   }) 
 
+  function renderDeliveryOptions(productId, deliveryId) {
+    let deliveryOptionHTML = '';
+
+    deliveryOptions.forEach((deliveryOption) => {
+
+      const dateString = getDate(deliveryOption);
+      const deliveryPrice = deliveryOption.deliveryPriceCents === 0 ? 'FREE' : deliveryOption.deliveryPriceCents
+
+      const deliveryChecked = deliveryId === deliveryOption.deliveryId ? 'checked' : ''; 
+
+      deliveryOptionHTML += `
+        <div class="delivery-option">
+          <input type="radio" class="delivery-option-input" name="delivery-option-${productId}" ${deliveryChecked}>
+          <div>
+            <div class="delivery-option-date">
+              ${dateString}
+            </div>
+            <div class="delivery-option-price">
+              $${deliveryPrice} - Shipping
+            </div>
+          </div>
+        </div>   
+      `;
+    })
+
+    return deliveryOptionHTML;
+  }
+
   document.querySelector('.js-cart-summary-container')
     .innerHTML = cartSummaryHTML;
 
   document.querySelectorAll('.js-delete-quantity-link')
     .forEach(link => {
+
       const {productId} = link.dataset;
 
       link.addEventListener('click', () => {
         document.querySelector(`.js-cart-summary-section-${productId}`)
           .remove();
-        removeFromCart(productId)
-        
-      })
+        removeFromCart(productId);
+      }) 
     })
+}
+
+function getMatchingItem(cartItem) {
+  let matchingItem;
+
+    products.forEach(product => {
+      if (product.id === cartItem.productId) {
+        matchingItem = product;
+      }
+    });
+
+  return matchingItem
+}
+
+function getDate(deliveryOption) {
+
+  const today = dayjs();
+  const deliveryDay = today.add(deliveryOption.deliveryDay, 'day');
+  const dateString = deliveryDay.format('dddd MMMM D');
+
+  return dateString;
 }
