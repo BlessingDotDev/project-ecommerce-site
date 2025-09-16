@@ -14,7 +14,7 @@ export function renderCartSummary() {
     });
 
     cartSummaryHTML += `
-      <div class="cart-summary-section">
+      <div class="cart-summary-section js-cart-summary-section-${cartItem.productId}">
         <p class="delivery-date">
           Delivery date: <span>Tueday, June 21</span>
         </p>
@@ -34,7 +34,7 @@ export function renderCartSummary() {
             <span class="update-quantity-link">
               Update
             </span>
-            <span class="delete-quantity-link">
+            <span class="delete-quantity-link js-delete-quantity-link" data-product-id="${cartItem.productId}">
               Delete
             </span>
           </div>
@@ -84,4 +84,14 @@ export function renderCartSummary() {
 
   document.querySelector('.js-cart-summary-container')
     .innerHTML = cartSummaryHTML;
+
+  document.querySelectorAll('.js-delete-quantity-link')
+    .forEach(link => {
+      const {productId} = link.dataset;
+
+      link.addEventListener('click', () => {
+        document.querySelector(`.js-cart-summary-section-${productId}`)
+          .remove();
+      })
+    })
 }
