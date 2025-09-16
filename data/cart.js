@@ -1,6 +1,6 @@
-import { products } from "./products.js";
 
-const cart = JSON.parse(localStorage.getItem('cartItem')) || [];
+
+export const cart = JSON.parse(localStorage.getItem('cartItem')) || [];
 
 export function addToCart(productId, selectValue) {
   let matching;
@@ -16,7 +16,8 @@ export function addToCart(productId, selectValue) {
   } else {
     cart.push({
       productId,
-      quantity: selectValue
+      quantity: selectValue,
+      deliveryId: '1d'
     });
   }
 

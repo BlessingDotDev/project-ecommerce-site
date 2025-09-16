@@ -1,3 +1,21 @@
+export const deliveryOptions = [
+  {
+    deliveryId: 'id1',
+    deliveryDay: 7,
+    deliveryPriceCents: 0
+  },
+  {
+    deliveryId: 'id2',
+    deliveryDay: 3,
+    deliveryPriceCents: 499
+  },
+  {
+    deliveryId: 'id1',
+    deliveryDay: 1,
+    deliveryPriceCents: 999
+  },
+]
+
 export const products = [
   {
     id: "1001sd",
