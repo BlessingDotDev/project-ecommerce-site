@@ -1,6 +1,7 @@
-import { setupHeaderEvents } from './header.js';
+import {setupHeaderEvents} from './header.js';
 import {products} from '../data/products.js';
 import {addToCart, updateCartQuanity} from '../data/cart.js';
+import { formatCurrency } from './utils/money.js';
 
 renderProductList();
 
@@ -28,7 +29,7 @@ function renderProductList() {
             </span>
           </div>
           <p class="product-price">
-            R${(product.priceCents / 100).toFixed(2)}
+            R${formatCurrency(product.priceCents)}
           </p>
 
           <div class="added-row">

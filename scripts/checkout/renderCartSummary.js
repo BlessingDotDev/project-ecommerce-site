@@ -1,5 +1,6 @@
 import {cart, removeFromCart, updateDeliveryDate} from '../../data/cart.js';
 import { products, getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
+import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 export function renderCartSummary() {
@@ -24,7 +25,7 @@ export function renderCartSummary() {
             ${matchingItem.name}
           </div>
           <div class="product-price">
-            R${matchingItem.priceCents / 100}
+            R${formatCurrency(matchingItem.priceCents)}
           </div>
           <div class="prodcut-quantity">
             <span>
