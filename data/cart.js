@@ -3,13 +3,7 @@
 export let cart = JSON.parse(localStorage.getItem('cartItem')) || [];
 
 export function addToCart(productId, selectValue) {
-  let matching;
-
-  cart.forEach(cartItem => {
-    if (cartItem.productId === productId) {
-      matching = cartItem
-    }
-  });
+  let matching = getMatchingCartItem(productId);
 
   if (matching) {
     matching.quantity += selectValue;
@@ -22,6 +16,18 @@ export function addToCart(productId, selectValue) {
   }
 
   SaveToStorage();
+}
+
+export function getMatchingCartItem(productId) {
+  let matching;
+
+  cart.forEach(cartItem => {
+    if (cartItem.productId === productId) {
+      matching = cartItem
+    }
+  });
+
+  return matching;
 }
 
 export function removeFromCart(productId) {
@@ -54,6 +60,12 @@ export function updateDeliveryDate(deliveryId, productId) {
       cartItem.deliveryId = deliveryId;
     }
   });
+
+  SaveToStorage();
+}
+
+export function updateQuantity(newQuantityValue, matchingItem) {
+  newQuantityValue ? matchingItem.quantity = newQuantityValue : matchingItem.quantity = matchingItem.quantity;
 
   SaveToStorage();
 }

@@ -1,4 +1,4 @@
-import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity, getMatchingCartItem, updateQuantity} from '../../data/cart.js';
 import { products, getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -31,7 +31,11 @@ export function renderCartSummary() {
             <span>
               Quantity:<span class="quantity-label">${cartItem.quantity}</span>
             </span>
-            <span class="update-quantity-link">
+            <input class="update-input js-update-input-${cartItem.productId}" type="text">
+            <span class="save-quantity-link js-save-quantity-link" data-product-id="${cartItem.productId}">
+              save
+            </span>
+            <span class="update-quantity-link js-update-quantity-link" data-product-id="${cartItem.productId}">
               Update
             </span>
             <span class="delete-quantity-link js-delete-quantity-link" data-product-id="${cartItem.productId}">
@@ -101,9 +105,40 @@ export function renderCartSummary() {
         renderCartSummary();
       })
     })
+    
+    document.querySelectorAll('.js-update-quantity-link')
+      .forEach(link => {
+        link.addEventListener('click', () => {
+          const {productId} = link.dataset;
+          const cartSummarycontianer = document.querySelector(`.js-cart-summary-section-${productId}`);
+
+
+
+          cartSummarycontianer.classList.add('editing');
+        })
+      })
+
+    document.querySelectorAll('.js-save-quantity-link')
+      .forEach(link => {
+        link.addEventListener('click', () => {
+          const {productId} = link.dataset;
+
+          const newQuantity = document.querySelector(`.js-update-input-${productId}`);
+
+          const newQuantityValue = Number(newQuantity.value);
+          const matchingItem = getMatchingCartItem(productId);
+          updateQuantity(newQuantityValue, matchingItem);
+
+          const cartSummarycontianer = document.querySelector(`.js-cart-summary-section-${productId}`);
+          cartSummarycontianer.classList.remove('editing');
+
+          renderCartSummary();
+        })
+      })
 
   updateCheckoutItems();
 }
+
 
 function getDate(deliveryDay) {
   const today = dayjs();

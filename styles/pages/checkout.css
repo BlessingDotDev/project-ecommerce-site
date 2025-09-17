@@ -68,15 +68,39 @@
 }
 
 .delete-quantity-link,
-.update-quantity-link {
+.update-quantity-link,
+.save-quantity-link {
   color: rgb(64, 64, 255);
   cursor: pointer;
   padding-right: 2px;
 }
 
 .delete-quantity-link:hover,
-.update-quantity-link:hover {
+.update-quantity-link:hover,
+.save-quantity-link:hover {
   color:  #a41313;
+}
+
+.update-input {
+  width: 40px;
+  font-size: 15px;
+  padding: 0 4px;
+}
+
+/* will display when clicking update */
+.save-quantity-link,
+.update-input {
+  display: none;
+}
+
+/* These will applay when clicking update */
+.editing .save-quantity-link, 
+.editing .update-input {
+  display: initial;
+}
+
+.editing .update-quantity-link {
+  display: none;
 }
 
 .delivery-option-title,
