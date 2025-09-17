@@ -48,6 +48,16 @@ export function updateCartQuanity() {
   return cartQuantity;
 }
 
+export function updateDeliveryDate(deliveryId, productId) {
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      cartItem.deliveryId = deliveryId;
+    }
+  });
+
+  SaveToStorage();
+}
+
 function SaveToStorage() {
   localStorage.setItem('cartItem', JSON.stringify(cart))
 }

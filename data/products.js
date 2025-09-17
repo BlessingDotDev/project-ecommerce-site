@@ -1,3 +1,27 @@
+export function getDeliveryDay(cartItem) {
+  let deliveryDay;
+
+  deliveryOptions.forEach((deliveryOption) => {
+    if (deliveryOption.deliveryId === cartItem.deliveryId) {
+      deliveryDay = deliveryOption.deliveryDay;
+    }
+  })
+
+  return deliveryDay;
+}
+
+export function getMatchingItem(cartItem) {
+  let matchingItem;
+
+    products.forEach(product => {
+      if (product.id === cartItem.productId) {
+        matchingItem = product;
+      }
+    });
+
+  return matchingItem;
+}
+
 export const deliveryOptions = [
   {
     deliveryId: 'id1',
@@ -14,7 +38,8 @@ export const deliveryOptions = [
     deliveryDay: 1,
     deliveryPriceCents: 999
   },
-]
+];
+
 
 export const products = [
   {
