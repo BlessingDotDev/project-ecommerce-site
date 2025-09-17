@@ -1,4 +1,4 @@
-import {cart, removeFromCart, updateDeliveryDate} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity} from '../../data/cart.js';
 import { products, getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -89,6 +89,7 @@ export function renderCartSummary() {
         document.querySelector(`.js-cart-summary-section-${productId}`)
           .remove();
         removeFromCart(productId);
+        renderCartSummary();
       }) 
     })
 
@@ -101,6 +102,7 @@ export function renderCartSummary() {
       })
     })
 
+  updateCheckoutItems();
 }
 
 function getDate(deliveryDay) {
@@ -109,6 +111,13 @@ function getDate(deliveryDay) {
   const dateString = deliveryDate.format('dddd MMMM D');
 
   return dateString;
+}
+
+function updateCheckoutItems() {
+  const cartQuantity = updateCartQuanity();
+
+  document.querySelector('.js-items')
+    .innerHTML = cartQuantity;
 }
 
 
