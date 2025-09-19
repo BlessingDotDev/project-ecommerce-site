@@ -238,7 +238,7 @@ export const products = [
     brand: "Nike",
     priceCents: 70000,
     image: "../images/products/kids.avif",
-    category: "kids",
+    category: "Kids",
     size: ["S", "XS", "XXS"],
     ratings: {
       starts: 2.0,
@@ -276,7 +276,7 @@ export const products = [
     brand: "Nike",
     priceCents: 40000,
     image: "../images/products/kids2.avif",
-    category: "kids",
+    category: "Kids",
     size: ["S", "XS"],
     ratings: {
       starts: 4.5,
@@ -296,7 +296,7 @@ export const products = [
     brand: "Nike",
     priceCents: 54000,
     image: "../images/products/kids3.avif",
-    category: "kids",
+    category: "Kids",
     size: ["S", "XS"],
     ratings: {
       starts: 4.5,
@@ -317,7 +317,7 @@ export const products = [
     brand: "Nike",
     priceCents: 64000,
     image: "../images/products/kids4.avif",
-    category: "kids",
+    category: "Kids",
     size: ["S", "XS"],
     ratings: {
       starts: 1.5,
@@ -577,6 +577,127 @@ export const products = [
       "men",
       "white",
       "long sleeve"
+    ],
+    instock: true
+  },
+  {
+    id: "1026ldhmkgesfsdf",
+    name: "Baby shirt",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-baby.avif",
+    category: "Baby",
+    size: ["XS","S"],
+    ratings: {
+      starts: 4.0,
+      counts: 1101
+    },
+    keywords: [
+      "t-shirt",
+      "baby",
+    ],
+    instock: true
+  },
+  {
+    id: "1027ldmdkhesfsdf",
+    name: "Big Kids clothes",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-big-kids.avif",
+    category: "Big Kids",
+    size: ["XS","S"],
+    ratings: {
+      starts: 4.0,
+      counts: 111
+    },
+    keywords: [
+      "t-shirt",
+      "kids",
+      "pants"
+    ],
+    instock: true
+  },
+  {
+    id: "1028ldhng4sfsdf",
+    name: "ladies clothes",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-ladies.avif",
+    category: "Ladies",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 4.0,
+      counts: 111
+    },
+    keywords: [
+      "t-shirt",
+      "ladies",
+      "woman",
+      "women",
+      "skis"
+    ],
+    instock: true
+  },
+  {
+    id: "1029ldddg4sfsdf",
+    name: "ladies clothes",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-pre-kids.avif",
+    category: "Pre Kids",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 4.0,
+      counts: 111
+    },
+    keywords: [
+      "t-shirt",
+      "ladies",
+      "woman",
+      "women",
+      "skis"
+    ],
+    instock: true
+  },
+  {
+    id: "1030lherhsfsdf",
+    name: "ladies clothes",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-shoes.avif",
+    category: "Shoes",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 4.0,
+      counts: 111
+    },
+    keywords: [
+      "t-shirt",
+      "ladies",
+      "woman",
+      "women",
+      "skis"
+    ],
+    instock: true
+  },
+  {
+    id: "1031lherhsfsdf",
+    name: "ladies clothes",
+    brand: "Folo",
+    priceCents: 250000,
+    image: "../images/products/2025wk36-mrp-homepage-sustainability.avif",
+    category: "Sustainability",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 4.0,
+      counts: 111
+    },
+    keywords: [
+      "t-shirt",
+      "ladies",
+      "woman",
+      "women",
+      "skis"
     ],
     instock: true
   }
