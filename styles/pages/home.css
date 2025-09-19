@@ -22,6 +22,7 @@
   color: white;
   margin: 10px;
   letter-spacing: 5px;
+  pointer-events: none;
 }
 
 .background-overlay button {
@@ -39,6 +40,11 @@
 .background-overlay button:hover {
   background-color: white;
   color: black;
+}
+
+.background-overlay button:active {
+  background-color: black;
+  color: white;
 }
 
 .home-grid-layout {

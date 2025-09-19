@@ -1,5 +1,5 @@
 import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity, getMatchingCartItem, updateQuantity} from '../../data/cart.js';
-import { products, getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
+import { getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
 
@@ -111,9 +111,6 @@ export function renderCartSummary() {
         link.addEventListener('click', () => {
           const {productId} = link.dataset;
           const cartSummarycontianer = document.querySelector(`.js-cart-summary-section-${productId}`);
-
-
-
           cartSummarycontianer.classList.add('editing');
         })
       })

@@ -15,11 +15,9 @@
 </head>
 <body>
   <header>
-    <div class="header-container">
+     <div class="header-container">
       <div class="logo-section">
-        <div class="primary-icon">
-          <img class="menu-icon" src="images/icons/menu.svg" alt="">
-        </div>
+        <img class="menu-icon" src="images/icons/menu.svg" alt="">
         <a href="index.html">
           <span class="logo-name">
             <span class="logo-letter">M</span>p<span class="logo-letter">a</span>hl<span class="logo-letter">a</span>
@@ -27,22 +25,22 @@
         </a>
       </div>
       
-      <div class="search-bar clicked-search-bar">
-        <div class="search-icon-box">
+      <div class="search-bar js-search-bar">
+        <div class="search-icon-box ">
           <img src="images/icons/search.svg">
         </div>
         <input type="search" placeholder="Search Items, Brands & Catagories">
       </div>
 
       <div class="header-right-section">
-        <div class="search-icon primary-icon">
+        <div class="search-icon js-search-icon">
           <img src="images/icons/search.svg">
         </div>
 
         <a href="checkout.html">
-          <div class="cart-container primary-icon">
+          <div class="cart-container">
             <img src="images/icons/shopping-cart.svg" alt="cart icon">
-            <div class="cart-item">2</div>
+            <div class="cart-item js-cart-item">0</div>
           </div>
         </a>
       </div>
@@ -172,5 +170,7 @@
       </div>
     </div>
   </div>
+
+  <script src="scripts/index.js" type="module"></script>
 </body>
 </html>
