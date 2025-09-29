@@ -2,6 +2,7 @@ import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity, getMatching
 import { getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
+import { renderOrderSummary } from './renderOrderSummary.js';
 
 export function renderCartSummary() {
   let cartSummaryHTML = '';
@@ -60,7 +61,7 @@ export function renderCartSummary() {
     deliveryOptions.forEach((deliveryOption) => {
 
       const dateString = getDate(deliveryOption.deliveryDay);
-      const deliveryPrice = deliveryOption.deliveryPriceCents === 0 ? 'FREE' : deliveryOption.deliveryPriceCents
+      const deliveryPrice = deliveryOption.deliveryPriceCents === 0 ? 'FREE' : `R${deliveryOption.deliveryPriceCents}`
 
       const deliveryChecked = deliveryId === deliveryOption.deliveryId ? 'checked' : ''; 
 
@@ -72,7 +73,7 @@ export function renderCartSummary() {
               ${dateString}
             </div>
             <div class="delivery-option-price">
-              $${deliveryPrice} - Shipping
+              ${deliveryPrice} - Shipping
             </div>
           </div>
         </div>   
@@ -94,6 +95,7 @@ export function renderCartSummary() {
           .remove();
         removeFromCart(productId);
         renderCartSummary();
+        renderOrderSummary();
       }) 
     })
 
@@ -103,6 +105,7 @@ export function renderCartSummary() {
         const {deliveryId, productId } = deliveryOption.dataset;
         updateDeliveryDate(deliveryId, productId);
         renderCartSummary();
+        renderOrderSummary();
       })
     })
     
@@ -130,6 +133,7 @@ export function renderCartSummary() {
           cartSummarycontianer.classList.remove('editing');
 
           renderCartSummary();
+          renderOrderSummary();
         })
       })
 

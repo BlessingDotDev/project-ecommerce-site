@@ -25,23 +25,23 @@ export function renderOrderSummary() {
     </div>
     <div class="row">
       <span>Items (${quantity})</span>
-      <span>$${formatCurrency(productPriceCents)}</span>
+      <span>R${formatCurrency(productPriceCents)}</span>
     </div>
     <div class="row row-gap">
       <span>Shipping & handling</span>
-      <span>$${formatCurrency(shippingPriceCents)}</span>
+      <span>R${formatCurrency(shippingPriceCents)}</span>
     </div>
     <div class="row">
       <span>Total before tax</span>
-      <span>$${formatCurrency(totalBeforeTax)}</span>
+      <span>R${formatCurrency(totalBeforeTax)}</span>
     </div>
     <div class="row">
       <span>Estimated tax (10%)</span>
-      <span>$${formatCurrency(taxCents)}</span>
+      <span>R${formatCurrency(taxCents)}</span>
     </div>
     <div class="row total">
       <span>Order total</span>
-      <span>$${formatCurrency(totalCents)}1</span>
+      <span>R${formatCurrency(totalCents)}1</span>
     </div>
     <button class="place-your-order-button">
       Place your order
