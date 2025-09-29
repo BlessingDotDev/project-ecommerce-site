@@ -7,11 +7,10 @@ function renderProductsCategories() {
 
   productsCatagories.forEach((category) => {
    const matchingProduct = getMatchingProduct(category);
-   console.log(matchingProduct)
 
     productsCategoryHTML += `
       <a href="shop.html">
-        <div class="content-container">
+        <div class="content-container js-content-container">
           <img src="${matchingProduct.image}" alt="men content image">
           <div class="content-link">
             <span>${category.category}</span>
@@ -24,6 +23,13 @@ function renderProductsCategories() {
 
   document.querySelector('.js-home-grid-layout')
     .innerHTML = productsCategoryHTML;
+
+  document.querySelectorAll('.js-content-container')
+    .forEach((container) => {
+      container.addEventListener('click', () => {
+        
+      })
+    })
 
   function getMatchingProduct(category) {
     let matchingProduct;

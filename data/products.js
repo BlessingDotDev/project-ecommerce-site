@@ -10,6 +10,18 @@ export function getDeliveryDay(cartItem) {
   return deliveryDay;
 }
 
+export function getDeliveryPriceCents(cartItem) {
+  let deliveryPrice;
+
+  deliveryOptions.forEach((deliveryOption) => {
+    if (deliveryOption.deliveryId === cartItem.deliveryId) {
+      deliveryPrice = deliveryOption.deliveryPriceCents;
+    }
+  })
+
+  return deliveryPrice;
+}
+
 export function getMatchingItem(cartItem) {
   let matchingItem;
 
