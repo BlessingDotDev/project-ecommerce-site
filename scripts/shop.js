@@ -2,7 +2,6 @@ import {setupHeaderEvents} from './header.js';
 import {products} from '../data/products.js';
 import {addToCart, updateCartQuanity} from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
-
 renderProductList();
 
 function renderProductList() {

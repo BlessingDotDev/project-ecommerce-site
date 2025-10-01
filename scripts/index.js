@@ -27,7 +27,7 @@ function renderProductsCategories() {
   document.querySelectorAll('.js-content-container')
     .forEach((container) => {
       container.addEventListener('click', () => {
-        
+
       })
     })
 
