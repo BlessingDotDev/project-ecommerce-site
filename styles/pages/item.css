@@ -8,6 +8,11 @@
   column-gap: 30px;
 }
 
+/* Display on small sreen */
+.display-product-names {
+  display: none;
+} 
+
 .image-container {
   max-width: 600px;
 }
@@ -103,7 +108,7 @@
   border: none;
   border-radius: 50px;
   height: 50px;
-  width: 350px;
+  width: 100%;
   text-wrap: nowrap;
   margin: 20px 0;
   font-weight: bold;
@@ -146,5 +151,35 @@
 
 .count {
   color: grey;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .product-names {
+    display: none;
+  }
+
+  .display-product-names {
+    display: initial;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+
+  .image-container {
+    max-width: 100%;
+    background-color: red;
+  }
+
+  .product-info {
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .size-options li {
+    flex: 1;
+  } 
 }
 
