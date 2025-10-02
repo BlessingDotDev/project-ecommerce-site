@@ -1,7 +1,9 @@
 import {setupHeaderEvents} from './header.js';
 import {products} from '../data/products.js';
 import {addToCart, updateCartQuanity} from '../data/cart.js';
-import { formatCurrency } from './utils/money.js';
+import {formatCurrency} from './utils/money.js';
+import {itemId, saveToStorage, removeFromStorage} from '../data/itemdata.js';
+
 renderProductList();
 
 function renderProductList() {
@@ -11,7 +13,8 @@ function renderProductList() {
   products.forEach((product) => {
     productListHTML += `
       <div class="product-container">
-        <div class="product-image">
+        <div class="product-image js-product-image"
+        data-product-id="${product.id}">
           <img src="${product.image}" alt="">
         </div>
         <div class="product-info">
@@ -95,6 +98,18 @@ function renderProductList() {
       .classList.remove('show-message');
     }, 1000)
   }
+
+// For the Item.html page and itemdata.js,item.js
+  document.querySelectorAll('.js-product-image')
+    .forEach(image => {
+      image.addEventListener('click', () => {
+        const { productId } = image.dataset;
+        removeFromStorage();
+        itemId.push(productId);
+        saveToStorage();
+        window.location.href = 'item.html';
+      })
+    })
 
 }
 
