@@ -251,7 +251,7 @@ export const products = [
     priceCents: 70000,
     image: "../images/products/kids.avif",
     category: "Kids",
-    size: ["S", "XS", "XXS"],
+    size: ["S", "XS", "M"],
     ratings: {
       starts: 2.0,
       counts: 52
@@ -370,7 +370,7 @@ export const products = [
     priceCents: 32000,
     image: "../images/products/mean-sneakers2.avif",
     category: "Men",
-    size: ["5","7", "8", "9"],
+    size: ["6","7", "8", "9"],
     ratings: {
       starts: 1.0,
       counts: 11

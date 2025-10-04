@@ -81,10 +81,16 @@
   cursor: pointer;
   transition: border-color 0.15s;
   margin-bottom: 30px;
+  background-color: rgb(235, 235, 235);
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*  Added to the button size that are available with js  */
+.size-options .size-button {
+  background-color: white;
 }
 
 .size-options li:hover {
@@ -197,4 +203,5 @@
     margin: 0;
   }
 }
+
 

@@ -65,12 +65,12 @@ function renderItem() {
         </div>
 
         <ul class="size-options">
-          <li>XS</li>
-          <li>S</li>
-          <li>M</li>
-          <li>L</li>
-          <li>XL</li>
-          <li>XXL</li>
+          <li class="js-size-button">XS</li>
+          <li class="js-size-button">S</li>
+          <li class="js-size-button">M</li>
+          <li class="js-size-button">L</li>
+          <li class="js-size-button">XL</li>
+          <li class="js-size-button">XXL</li>
         </ul>
 
         <button class="add-to-cart-button">
@@ -95,27 +95,42 @@ function renderItem() {
 
   document.querySelector('.js-main-container')
     .innerHTML = productItemHTML;
-
-//for the fixed add-to-cart-buttton
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 450) {
-      removeFixedButton();
-    } else {
-      addFixedButton();
-    }
+    
+    //for the fixed add-to-cart-buttton
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 450) {
+        removeFixedButton();
+      } else {
+        addFixedButton();
+      }
   })
-}
+  
+  //Works with the item size buttons
+  checkSize(matchingProduct.size);
 
+}
 
 function removeFixedButton() {
   const button = document.querySelector('.js-add-to-cart-button');
   
   button.classList.remove('display-add-top-button');
-    
 }
 
 function addFixedButton() {
   const button = document.querySelector('.js-add-to-cart-button');
   
   button.classList.add('display-add-top-button');
+}
+
+function checkSize(sizes) {
+  sizes.forEach((size) => {
+
+    document.querySelectorAll('.js-size-button')
+      .forEach(button => {
+        if (button.innerText === size){
+          console.log(button);
+          button.classList.add('size-button');
+        }
+      })
+  })
 }
