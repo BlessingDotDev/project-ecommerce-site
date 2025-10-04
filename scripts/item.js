@@ -76,8 +76,8 @@ function renderItem() {
         <button class="add-to-cart-button">
           Add to Cart
         </button>
-        <button class="favourite-button">
-          Favourite <span class="heart">&#9825;</span> 
+        <button class="favourite-button js-favourite-button">
+          Favourite <span class="heart js-heart">&#9825;</span> 
         </button>
 
         <div class="ratings">
@@ -96,17 +96,22 @@ function renderItem() {
   document.querySelector('.js-main-container')
     .innerHTML = productItemHTML;
     
-    //for the fixed add-to-cart-buttton
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 450) {
-        removeFixedButton();
-      } else {
-        addFixedButton();
-      }
+  // For the fixed add-to-cart-buttton
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 450) {
+      removeFixedButton();
+    } else {
+      addFixedButton();
+    }
   })
   
-  //Works with the item size buttons
+  // Works with the item size buttons
   checkSize(matchingProduct.size);
+
+  // Add functionality to the favourite button
+  document.querySelector('.js-favourite-button').addEventListener('click', () => {
+    makeFvourite()
+  })
 
 }
 
@@ -128,9 +133,22 @@ function checkSize(sizes) {
     document.querySelectorAll('.js-size-button')
       .forEach(button => {
         if (button.innerText === size){
-          console.log(button);
           button.classList.add('size-button');
         }
       })
   })
+}
+
+let isFavourite;
+
+function makeFvourite() {
+  const heartElement =  document.querySelector('.js-heart');
+
+    if (!isFavourite) {
+      heartElement.innerHTML = '&#9829;';
+      isFavourite = true;
+    } else {
+      heartElement.innerHTML = '&#9825;';
+      isFavourite = false
+    }
 }
