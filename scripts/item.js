@@ -1,6 +1,7 @@
 import { itemId } from "../data/itemdata.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
+import { addToCart, updateCartQuanity } from "../data/cart.js";
 
 renderItem();
 
@@ -29,7 +30,9 @@ function renderItem() {
         </p>
       </div>
       <!--Will display on small screen-->
-       <button class="add-to-cart-button display-add-top-button js-add-to-cart-button">
+       <button class="add-to-cart-button display-add-top-button js-add-to-cart-button"
+         data-product-id="${matchingProduct.id}"
+       >
           Add to Cart
         </button>
 
@@ -73,9 +76,29 @@ function renderItem() {
           <li class="js-size-button">XXL</li>
         </ul>
 
-        <button class="add-to-cart-button">
+        <div class="added-row">
+          <select name="number" id="number" class="js-select-value-${matchingProduct.id}">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+
+          <span class="added-message js-added-message-${matchingProduct.id}">Added</span>
+          </div>
+
+        <button class="add-to-cart-button js-add-to-cart-button"
+        data-product-id="${matchingProduct.id}"
+        >
           Add to Cart
         </button>
+
         <button class="favourite-button js-favourite-button">
           Favourite <span class="heart js-heart">&#9825;</span> 
         </button>
@@ -111,8 +134,26 @@ function renderItem() {
   // Add functionality to the favourite button
   document.querySelector('.js-favourite-button').addEventListener('click', () => {
     makeFvourite()
-  })
+  });
 
+  // Add functionality to the add to cart button
+  
+  document.querySelectorAll('.js-add-to-cart-button')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+
+        const {productId} = button.dataset;
+        const selectElement = document.querySelector(`.js-select-value-${productId}`);
+        const selectValue = Number(selectElement.value);
+
+        addToCart(productId, selectValue);
+        const cartQuantity = updateCartQuanity();
+        renderCartQuantity(cartQuantity);
+        
+        renderAddedMessage(productId);
+        selectElement.value = '1';
+      })
+    })
 }
 
 function removeFixedButton() {
@@ -151,4 +192,22 @@ function makeFvourite() {
       heartElement.innerHTML = '&#9825;';
       isFavourite = false
     }
+}
+
+function renderCartQuantity(cartQuantity) {
+  document.querySelector('.js-cart-item')
+    .innerHTML = cartQuantity;
+}
+
+let timeoutId;
+function renderAddedMessage(productId) {
+  document.querySelector(`.js-added-message-${productId}`)
+    .classList.add('show-message');
+
+  clearInterval(timeoutId);
+
+  timeoutId = setTimeout(() => {
+      document.querySelector(`.js-added-message-${productId}`)
+    .classList.remove('show-message');
+  }, 1000)
 }
