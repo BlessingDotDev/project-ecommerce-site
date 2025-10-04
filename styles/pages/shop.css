@@ -14,7 +14,7 @@
 .product-image {
   overflow: hidden;
   margin-bottom: 10px;
-  height: 250px;
+  height: 300px;
 }
 
 .product-image img {
@@ -22,6 +22,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.17s;
+  cursor: pointer;
 }
 
 .product-image:hover img {
@@ -32,7 +33,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 230px;
+  height: 110px; 
+  pointer-events: none;
 }
 
 .product-name,
@@ -82,6 +84,16 @@
   opacity: .8;
 }
 
+/* Removes all the element that the item.html offers
+   remove with css for safr kepping, also will be available
+   in js and html
+*/
+
+.add-to-cart-button,
+.product-ratings,
+select {
+  display: none;
+}
 
   @media only screen and (max-width: 1200px) {
     .grid-layout {

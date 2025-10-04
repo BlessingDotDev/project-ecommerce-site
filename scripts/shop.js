@@ -47,7 +47,7 @@ function renderProductList() {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-
+          
           <span class="added-message js-added-message-${product.id}">Added</span>
           </div>
 
