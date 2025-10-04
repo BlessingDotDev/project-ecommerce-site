@@ -1,4 +1,5 @@
 import { products, productsCatagories } from "../data/products.js";
+import { renderCartQuantity } from "./header.js";
 
 renderProductsCategories();
 
@@ -42,5 +43,5 @@ function renderProductsCategories() {
 
     return matchingProduct;
   }
-
+renderCartQuantity();
 }

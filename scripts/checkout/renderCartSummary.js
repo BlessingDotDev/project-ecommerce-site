@@ -1,8 +1,9 @@
-import {cart, removeFromCart, updateDeliveryDate, updateCartQuanity, getMatchingCartItem, updateQuantity} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryDate, getMatchingCartItem, updateQuantity} from '../../data/cart.js';
 import { getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { renderOrderSummary } from './renderOrderSummary.js';
+import { renderCartQuantity } from '../header.js';
 
 export function renderCartSummary() {
   let cartSummaryHTML = '';
@@ -15,7 +16,7 @@ export function renderCartSummary() {
     
 
     cartSummaryHTML += `
-      <div class="cart-summary-section js-cart-summary-section-${cartItem.productId}">
+      <div class="cart-summary-section js-cart-summary js-cart-summary-section-${cartItem.productId}">
         <p class="delivery-date">
           Delivery date: <span>${dateString}</span>
         </p>
@@ -138,6 +139,8 @@ export function renderCartSummary() {
       })
 
   updateCheckoutItems();
+  // FOr the cartquantity at the hearder
+  renderCartQuantity();
 }
 
 
@@ -150,10 +153,10 @@ function getDate(deliveryDay) {
 }
 
 function updateCheckoutItems() {
-  const cartQuantity = updateCartQuanity();
+  const numberOfItems = document.querySelectorAll('.js-cart-summary').length;
 
   document.querySelector('.js-items')
-    .innerHTML = cartQuantity;
+    .innerHTML = numberOfItems;
 }
 
 

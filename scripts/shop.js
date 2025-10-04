@@ -1,6 +1,6 @@
-import {setupHeaderEvents} from './header.js';
+import {setupHeaderEvents, renderCartQuantity} from './header.js';
 import {products} from '../data/products.js';
-import {addToCart, updateCartQuanity} from '../data/cart.js';
+import {addToCart} from '../data/cart.js';
 import {formatCurrency} from './utils/money.js';
 import {itemId, saveToStorage, removeFromStorage} from '../data/itemdata.js';
 
@@ -72,18 +72,12 @@ function renderProductList() {
         const selectValue = Number(selectElement.value);
 
         addToCart(productId, selectValue);
-        const cartQuantity = updateCartQuanity();
-        renderCartQuantity(cartQuantity);
+        renderCartQuantity();
         
         renderAddedMessage(productId);
         selectElement.value = '1';
       })
     })
-
-  function renderCartQuantity(cartQuantity) {
-    document.querySelector('.js-cart-item')
-      .innerHTML = cartQuantity;
-  }
 
   let timeoutId;
 
@@ -110,6 +104,9 @@ function renderProductList() {
         window.location.href = 'item.html';
       })
     })
+
+  // wheb the page load also render cart
+  renderCartQuantity()
 
 }
 

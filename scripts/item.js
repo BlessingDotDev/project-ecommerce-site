@@ -131,13 +131,15 @@ function renderItem() {
   // Works with the item size buttons
   checkSize(matchingProduct.size);
 
+  // Update the cartQuantity
+  renderCartQuantity()
+
   // Add functionality to the favourite button
   document.querySelector('.js-favourite-button').addEventListener('click', () => {
     makeFvourite()
   });
 
   // Add functionality to the add to cart button
-  
   document.querySelectorAll('.js-add-to-cart-button')
     .forEach((button) => {
       button.addEventListener('click', () => {
@@ -147,8 +149,7 @@ function renderItem() {
         const selectValue = Number(selectElement.value);
 
         addToCart(productId, selectValue);
-        const cartQuantity = updateCartQuanity();
-        renderCartQuantity(cartQuantity);
+        renderCartQuantity();
         
         renderAddedMessage(productId);
         selectElement.value = '1';
@@ -194,7 +195,8 @@ function makeFvourite() {
     }
 }
 
-function renderCartQuantity(cartQuantity) {
+function renderCartQuantity() {
+  const cartQuantity = updateCartQuanity();
   document.querySelector('.js-cart-item')
     .innerHTML = cartQuantity;
 }
