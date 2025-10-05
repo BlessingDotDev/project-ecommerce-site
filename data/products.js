@@ -712,5 +712,169 @@ export const products = [
       "skis"
     ],
     instock: true
+  },
+  {
+    id: "1032lkferhsfsdf",
+    name: "Men red Jacket",
+    brand: "Nike",
+    priceCents: 250000,
+    image: "../images/products/men3.avif",
+    category: "Men",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 4.0,
+      counts: 685
+    },
+    keywords: [
+      "jacket",
+      "men",
+      "man",
+      "red"
+    ],
+    instock: true
+  },
+  {
+    id: "1033lkfsjehtsdf",
+    name: "Men Graphic t-shirt",
+    brand: "Nike",
+    priceCents: 45000,
+    image: "../images/products/men4.avif",
+    category: "Sustainability",
+    size: ["S","M","L", "XL"],
+    ratings: {
+      starts: 3.0,
+      counts: 95
+    },
+    keywords: [
+      "t-shirt",
+      "men",
+      "man",
+      "white"
+    ],
+    instock: true
+  },
+  {
+    id: "1034lkfsjsdsdf",
+    name: "Men Black Jacket",
+    brand: "Nike",
+    priceCents: 200000,
+    image: "../images/products/men5.avif",
+    category: "Men",
+    size: ["S","M","L", "XL"],
+    ratings: {
+      starts: 2.0,
+      counts: 23
+    },
+    keywords: [
+      "jacket",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "1035ljdsdsdf",
+    name: "Men Black Jacket",
+    brand: "Nike Jordan",
+    priceCents: 250000,
+    image: "../images/products/men6.avif",
+    category: "Men",
+    size: ["S","M"],
+    ratings: {
+      starts: 2.5,
+      counts: 29
+    },
+    keywords: [
+      "jacket",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "1036luuuddsdf",
+    name: "Men Black track pants",
+    brand: "Nike Jordan",
+    priceCents: 195000,
+    image: "../images/products/men7.avif",
+    category: "Men",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 3.5,
+      counts: 58
+    },
+    keywords: [
+      "pants",
+      "track-suit",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "1037leujrdsdf",
+    name: "Men track suit hoodie",
+    brand: "Nike Jordan",
+    priceCents: 115000,
+    image: "../images/products/men9.avif",
+    category: "Men",
+    size: ["S","M","L"],
+    ratings: {
+      starts: 3.5,
+      counts: 58
+    },
+    keywords: [
+      "hoodie",
+      "track-suit",
+      "men",
+      "man",
+      "orange"
+    ],
+    instock: true
+  },
+  {
+    id: "1038ldijedsdf",
+    name: "White 58 Air jordans",
+    brand: "Nike Jordan",
+    priceCents: 115000,
+    image: "../images/products/shies11.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 142
+    },
+    keywords: [
+      "shoes",
+      "air-jordan",
+      "men",
+      "man",
+      "white"
+    ],
+    instock: true
+  },
+  {
+    id: "1039lijhsdf",
+    name: "Air max 374",
+    brand: "Nike",
+    priceCents: 450000,
+    image: "../images/products/shoes 10.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.0,
+      counts: 132
+    },
+    keywords: [
+      "shoes",
+      "air-max",
+      "men",
+      "man",
+      "orange"
+    ],
+    instock: true
   }
 ]
