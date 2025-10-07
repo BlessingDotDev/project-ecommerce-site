@@ -1,4 +1,4 @@
-let category = JSON.parse(localStorage.getItem('category')) || [];
+export let category = JSON.parse(localStorage.getItem('category')) || [];
 
 function saveToStorage() {
   localStorage.setItem('category', JSON.stringify(category))
