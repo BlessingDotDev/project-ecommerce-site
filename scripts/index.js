@@ -1,5 +1,6 @@
 import { products, productsCatagories } from "../data/products.js";
 import { renderCartQuantity } from "./header.js";
+import { saveCategory } from "./category.js";
 
 renderProductsCategories();
 
@@ -11,7 +12,8 @@ function renderProductsCategories() {
 
     productsCategoryHTML += `
       <a href="shop.html">
-        <div class="content-container js-content-container">
+        <div class="content-container js-content-container"
+        data-product-category="${matchingProduct.category}">
           <img src="${matchingProduct.image}" alt="men content image">
           <div class="content-link">
             <span>${category.category}</span>
@@ -28,7 +30,8 @@ function renderProductsCategories() {
   document.querySelectorAll('.js-content-container')
     .forEach((container) => {
       container.addEventListener('click', () => {
-
+        const {productCategory} = container.dataset;
+        saveCategory(productCategory);
       })
     })
 
