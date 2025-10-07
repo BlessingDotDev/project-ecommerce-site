@@ -10,8 +10,7 @@ function renderItem() {
   let matchingProduct;
 
   products.forEach(product => {
-  //since the localstorage.remove is failing ill resote to option 2 where we get whatever id is in last place in the array
-    if (itemId[itemId.length - 1] === product.id) {
+    if (itemId[0] === product.id) {
       matchingProduct = product;
     }
   })

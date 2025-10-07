@@ -2,7 +2,7 @@ import {setupHeaderEvents, renderCartQuantity} from './header.js';
 import {products} from '../data/products.js';
 import {addToCart} from '../data/cart.js';
 import {formatCurrency} from './utils/money.js';
-import {itemId, saveToStorage, removeFromStorage} from '../data/itemdata.js';
+import {saveitemId} from '../data/itemdata.js';
 
 renderProductList();
 
@@ -98,14 +98,13 @@ function renderProductList() {
     .forEach(image => {
       image.addEventListener('click', () => {
         const { productId } = image.dataset;
-        removeFromStorage();
-        itemId.push(productId);
-        saveToStorage();
+        
+        saveitemId(productId);
         window.location.href = 'item.html';
       })
     })
 
-  // wheb the page load also render cart
+  // when the page load also render cart
   renderCartQuantity()
 
 }
