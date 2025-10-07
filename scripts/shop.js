@@ -2,7 +2,7 @@ import { setupHeaderEvents, renderCartQuantity } from './header.js';
 import { products } from '../data/products.js';
 import { addToCart } from '../data/cart.js';
 import { formatCurrency } from './utils/money.js';
-import { saveitemId } from '../data/itemdata.js';
+import { saveitemId, itemId } from '../data/itemdata.js';
 import { category } from './category.js';
 
 let filteredProducts = products;

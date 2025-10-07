@@ -1,6 +1,7 @@
 import { products, productsCatagories } from "../data/products.js";
 import { renderCartQuantity } from "./header.js";
 import { saveCategory } from "./category.js";
+import { removeFromStorage } from "./category.js";
 
 renderProductsCategories();
 
@@ -48,3 +49,8 @@ function renderProductsCategories() {
   }
 renderCartQuantity();
 }
+// For the shop all button in the home page
+document.querySelector('.js-shop-all-button')
+  .addEventListener('click', () => {
+    removeFromStorage();
+  })

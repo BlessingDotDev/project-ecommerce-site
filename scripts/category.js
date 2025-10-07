@@ -4,7 +4,7 @@ function saveToStorage() {
   localStorage.setItem('category', JSON.stringify(category))
 }
 
-function removeFromStorage() {
+export function removeFromStorage() {
   localStorage.removeItem('category');
   category = [];
 }
