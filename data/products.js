@@ -1,3 +1,5 @@
+import { formatCurrency } from "../scripts/utils/money.js";
+
 export function getDeliveryDay(cartItem) {
   let deliveryDay;
 
@@ -86,6 +88,30 @@ export const productsCatagories = [
     category: 'Sustainability'
   }
 ]
+
+class Product {
+  id;
+  name;
+  priceCents;
+  image;
+  category;
+  size;
+  ratings;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.name = productDetails.name;
+    this.priceCents = productDetails.priceCents;
+    this.image = productDetails.image;
+    this.category = productDetails.category;
+    this.size = productDetails.size;
+    this.ratings = productDetails.ratings;
+  };
+
+  getPrice() {
+    formatCurrency(this.priceCents)
+  }
+}
 
 export const products = [
   {
@@ -877,4 +903,6 @@ export const products = [
     ],
     instock: true
   }
-]
+].map(productDetail => new Product(productDetail))
+
+console.log(products)
