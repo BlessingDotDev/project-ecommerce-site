@@ -903,6 +903,4 @@ export const products = [
     ],
     instock: true
   }
-].map(productDetail => new Product(productDetail))
-
-console.log(products)
+].map(productDetail => new Product(productDetail));
