@@ -92,6 +92,7 @@ export const productsCatagories = [
 class Product {
   id;
   name;
+  brand;
   priceCents;
   image;
   category;
@@ -101,6 +102,7 @@ class Product {
   constructor(productDetails) {
     this.id = productDetails.id;
     this.name = productDetails.name;
+    this.brand = productDetails.brand;
     this.priceCents = productDetails.priceCents;
     this.image = productDetails.image;
     this.category = productDetails.category;
