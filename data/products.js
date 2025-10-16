@@ -121,7 +121,7 @@ export const products = [
     name: "Black Nike Bag",
     brand: "Nike",
     priceCents: 60000,
-    image: "../images/products/bag.avif",
+    image: "./../images/products/bag.avif",
     category: "Accessories",
     size: ["M", "L"],
     ratings: {
