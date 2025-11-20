@@ -193,3 +193,25 @@
     order: 2
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .main-container {
+    width: 85%;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .cart-item-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+  }
+
+  .cart-summary-container {
+    order: 2
+  }
+}
