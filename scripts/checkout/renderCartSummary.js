@@ -1,7 +1,7 @@
 import {cart, removeFromCart, updateDeliveryDate, getMatchingCartItem, updateQuantity} from '../../data/cart.js';
 import { getMatchingItem, deliveryOptions, getDeliveryDay } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
-import dayjs from 'http://unpkg.com/dayjs@1.11.10/esm/index.js';
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { renderOrderSummary } from './renderOrderSummary.js';
 import { renderCartQuantity } from '../header.js';
 
