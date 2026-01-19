@@ -705,7 +705,7 @@ export const products = [
     brand: "Folo",
     priceCents: 250000,
     image: "./images/products/2025wk36-mrp-homepage-shoes.avif",
-    category: "Shoes",
+    category: "Ladies",
     size: ["S","M","L"],
     ratings: {
       starts: 4.0,
@@ -904,5 +904,445 @@ export const products = [
       "orange"
     ],
     instock: true
-  }
+  },
+  {
+    id: "1039lijhfiufsdf",
+    name: "White Air Force 14",
+    brand: "Nike",
+    priceCents: 550999,
+    image: "./images/products/shoes1.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.0,
+      counts: 212
+    },
+    keywords: [
+      "shoes",
+      "air-force",
+      "men",
+      "man",
+      "white"
+    ],
+    instock: true
+  },
+  {
+    id: "107979lijhfiufsdf",
+    name: "White Air Force 17",
+    brand: "Nike",
+    priceCents: 650000,
+    image: "./images/products/shoes2.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 111
+    },
+    keywords: [
+      "shoes",
+      "air-force",
+      "men",
+      "man",
+      "white"
+    ],
+    instock: true
+  },
+  {
+    id: "107979lijhfgghiufsdf",
+    name: "Air Max 917",
+    brand: "Nike",
+    priceCents: 455999,
+    image: "./images/products/shoes4.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 2.5,
+      counts: 95
+    },
+    keywords: [
+      "shoes",
+      "air-max",
+      "men",
+      "man",
+      "orange"
+    ],
+    instock: true
+  },
+  {
+    id: "107979lijhfggsdfhiufsdf",
+    name: "Pink Air Max 45",
+    brand: "Nike",
+    priceCents: 605000,
+    image: "./images/products/shoes5.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 1.5,
+      counts: 65
+    },
+    keywords: [
+      "shoes",
+      "air-max",
+      "women",
+      "woma",
+      "pink"
+    ],
+    instock: true
+  },
+  {
+    id: "107979lijhfashfesdf",
+    name: "Black Air force 10",
+    brand: "Nike",
+    priceCents: 505000,
+    image: "./images/products/shoes6.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.5,
+      counts: 365
+    },
+    keywords: [
+      "shoes",
+      "air-force",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "10797lkauhvuwfr4687esdf",
+    name: "Air Jordan 10",
+    brand: "Nike Jordan",
+    priceCents: 720999,
+    image: "./images/products/shoes7.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 5.0,
+      counts: 3665
+    },
+    keywords: [
+      "shoes",
+      "jordan",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "107695847juhygtfr4687esdf",
+    name: "Blue Air Max 10",
+    brand: "Nike",
+    priceCents: 410000,
+    image: "./images/products/shoes8.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 521
+    },
+    keywords: [
+      "shoes",
+      "Nike",
+      "men",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "10769er847juhyg87945641331f",
+    name: "Pink Air Max 10",
+    brand: "Nike",
+    priceCents: 659999,
+    image: "./images/products/shoes9.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 2.5,
+      counts: 21
+    },
+    keywords: [
+      "shoes",
+      "Nike",
+      "woman",
+      "women",
+      "pink"
+    ],
+    instock: true
+  },
+  {
+    id: "10769esjheirbdsd45641331f",
+    name: "Jordan Air Max 46",
+    brand: "Nike",
+    priceCents: 658999,
+    image: "./images/products/shoes11.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.5,
+      counts: 321
+    },
+    keywords: [
+      "shoes",
+      "Nike",
+      "Jordan",
+      "man",
+      "black"
+    ],
+    instock: true
+  },
+  {
+    id: "10769esjjkdlfs41331f",
+    name: "Pink Air Max 31",
+    brand: "Nike",
+    priceCents: 700000,
+    image: "./images/products/shoes12.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 1.5,
+      counts: 19
+    },
+    keywords: [
+      "shoes",
+      "Nike",
+      "Jordan",
+      "women",
+      "pink"
+    ],
+    instock: true
+  },
+  {
+    id: "10769esjjkd7741s9989831f",
+    name: "White Floats 11",
+    brand: "Mpahla",
+    priceCents: 659999,
+    image: "./images/products/sneakers.avif",
+    category: "Shoes",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 19
+    },
+    keywords: [
+      "shoes",
+      "Nike",
+      "Jordan",
+      "women",
+      "pink"
+    ],
+    instock: true
+  },
+  {
+    id: "10769esjj78dlfs9989831f",
+    name: "Women shirt",
+    brand: "Mpahla",
+    priceCents: 399999,
+    image: "./images/products/wome2.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.0,
+      counts: 129
+    },
+    keywords: [
+      "shirt",
+      "Mpahla",
+      "Jordan",
+      "women"
+    ],
+    instock: true
+  },
+  {
+    id: "10769esjj78dlffutgy31f",
+    name: "Women white pants",
+    brand: "Mpahla",
+    priceCents: 299999,
+    image: "./images/products/women1.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 1.0,
+      counts: 22
+    },
+    keywords: [
+      "pants",
+      "Mpahla",
+      "white",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "1076954okgdlffutgy31f",
+    name: "Women Nike black top",
+    brand: "Nike",
+    priceCents: 599999,
+    image: "./images/products/women3.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.0,
+      counts: 421
+    },
+    keywords: [
+      "top",
+      "Nike",
+      "black",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "107695waszxdcfvfgbh41525254gy31f",
+    name: "Women Nike black top",
+    brand: "Nike",
+    priceCents: 399999,
+    image: "./images/products/women4.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 2.0,
+      counts: 61
+    },
+    keywords: [
+      "top",
+      "Nike",
+      "black",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565aszxdcfvfgbh41525254gy31f",
+    name: "Women Nike darkred top",
+    brand: "Nike",
+    priceCents: 399999,
+    image: "./images/products/women5.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 265
+    },
+    keywords: [
+      "top",
+      "Nike",
+      "darkred",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565aszxdcfv7854212221gy31f",
+    name: "Women Nike Jordan T-shirt",
+    brand: "Nike",
+    priceCents: 799999,
+    image: "./images/products/women6.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.5,
+      counts: 2865
+    },
+    keywords: [
+      "shirt",
+      "Nike",
+      "red",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565a525254212221gy31f",
+    name: "Women Nike T-shirt",
+    brand: "Nike",
+    priceCents: 599999,
+    image: "./images/products/women7.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 4.5,
+      counts: 2865
+    },
+    keywords: [
+      "shirt",
+      "Nike",
+      "white",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565a5252olkiju1gy31f",
+    name: "Women Nike T-shirt",
+    brand: "Nike",
+    priceCents: 599999,
+    image: "./images/products/women8.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 3.5,
+      counts: 451
+    },
+    keywords: [
+      "shirt",
+      "Nike",
+      "white",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565a525566iju1gy31f",
+    name: "Women Nike Black pants",
+    brand: "Nike",
+    priceCents: 659999,
+    image: "./images/products/women9.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 1.5,
+      counts: 62
+    },
+    keywords: [
+      "pants",
+      "Nike",
+      "black",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
+  {
+    id: "10756565a52514785236931f",
+    name: "Women Nike Brown top",
+    brand: "Nike",
+    priceCents: 759999,
+    image: "./images/products/women10.avif",
+    category: "Ladies",
+    size: ["S","M","L","XL"],
+    ratings: {
+      starts: 1.5,
+      counts: 62
+    },
+    keywords: [
+      "top",
+      "Nike",
+      "brown",
+      "women",
+      "woman"
+    ],
+    instock: true
+  },
 ].map(productDetail => new Product(productDetail));
